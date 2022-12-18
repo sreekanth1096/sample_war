@@ -9,8 +9,9 @@ pipeline {
 
     stage('building image') {
       steps {
-        sh '''docker build .
-'''
+        sh '''docker build -t sample-tomcat .
+docker tag sample-tomcat sreekanth1096/sample-tomcat:latest
+docker push sreekanth1096/sample-tomcat:latest'''
       }
     }
 
