@@ -27,7 +27,7 @@ docker push sreekanth1096/sample-tomcat:latest'''
 
     stage('conclusion') {
       steps {
-        echo 'We built a image out of a sample war file and deployed it in a tomcat container which runs on port 8083'
+        echo 'We built a image out of a sample war file and deployed it on a tomcat container which runs on port 8083'
       }
     }
 
