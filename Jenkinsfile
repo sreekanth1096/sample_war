@@ -36,8 +36,7 @@ docker push sreekanth1096/sample-tomcat:latest'''
     stage('conclusion') {
       steps {
 	sh'''
-	set +x
-	echo "We built a image out of a sample war file and deployed it on a tomcat container which runs on port 8083 \n you can access the app using the url http://$(curl ifconfig.me):8083/sample"
+	echo "We built a image out of a sample war file and deployed it on a tomcat container which runs on port 8083 \n you can access the app using the url http://$(curl ifconfig.me):8083/webapp"
 	'''
       }
     }
