@@ -9,6 +9,14 @@ pipeline {
         git(url: 'https://github.com/sreekanth1096/sample_war.git', branch: 'main')
       }
     }
+    stage('copy artifact') {
+      steps {
+        copyArtifacts filter: 'com.example.maven-project/webapp/1.0-SNAPSHOT/webapp-1.0-SNAPSHOT.war', fingerprintArtifacts: true, projectName: 'building the app', selector: lastSuccessful()
+	      sh '''mv com.example.maven-project/webapp/1.0-SNAPSHOT/webapp-1.0-SNAPSHOT.war webapp.war
+	      ls -lrt
+	      '''
+      }
+    }
 
     stage('build') {
       steps {
